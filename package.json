@@ -1,18 +1,34 @@
 {
     "name": "@contexis/use-api-fetch",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A simple React hook for fetching WordPress REST API data using @wordpress/api-fetch, including support for nonce middleware, custom root URLs, and loading/error handling.",
-    "main": "index.js",
+    "main": "./dist/use-api-fetch.umd.js",
+    "module": "./dist/use-api-fetch.es.js",
     "scripts": {
+        "build": "vite build",
+        "dev": "vite",
         "test": "vitest run",
         "test:watch": "vitest"
     },
     "publishConfig": {
         "access": "public"
     },
+    "exports": {
+        ".": {
+            "import": "./dist/use-api-fetch.es.js",
+            "require": "./dist/use-api-fetch.umd.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
     "type": "module",
     "author": "Thomas Gollenia",
     "license": "ISC",
+    "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
+    },
     "dependencies": {
         "@wordpress/api-fetch": "^5.2.2"
     },
@@ -22,6 +38,7 @@
         "@testing-library/user-event": "^14.6.1",
         "jsdom": "^26.1.0",
         "react": "^19.1.0",
+        "vite": "^6.3.5",
         "vitest": "^3.2.3"
     }
 }

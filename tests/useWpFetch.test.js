@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from "@testing-library/react"
 import { beforeEach, describe, expect, it, vi } from "vitest"
-import useApiFetch from "../index.js"
+import useApiFetch from "../src/index.js"
 
 // Mock @wordpress/api-fetch
 vi.mock("@wordpress/api-fetch", () => {
